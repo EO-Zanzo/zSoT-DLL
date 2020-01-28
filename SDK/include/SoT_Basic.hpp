@@ -124,22 +124,6 @@ public:
 		return i < Num();
 	}
 
-	inline T& begin()
-	{
-		if (Data[0])
-			return Data[0];
-		else
-			return nullptr;
-	}
-
-	inline T& end()
-	{
-		if (Data[Count - 1])
-			return Data[Count - 1];
-		else 
-			return nullptr;
-	}
-
 private:
 	T* Data;
 	int32_t Count;
@@ -286,16 +270,6 @@ struct FName
 	{
 		return ComparisonIndex == other.ComparisonIndex;
 	};
-
-	inline bool operator!=(const FName &other) const
-	{
-		return ComparisonIndex != other.ComparisonIndex;
-	};
-
-	inline int operator++() const
-	{
-		return (int)(this + 1);
-	}
 };
 
 class FString : public TArray<wchar_t>
@@ -322,9 +296,18 @@ public:
 
 	inline const wchar_t* c_str() const
 	{
-		if (Data)
-			return Data;
-		return L"";
+		return Data;
+	}
+
+	std::string ToString() const
+	{
+		const auto length = std::wcslen(Data);
+
+		std::string str(length, '\0');
+
+		std::use_facet<std::ctype<wchar_t>>(std::locale()).narrow(Data, Data + length, '?', &str[0]);
+
+		return str;
 	}
 };
 
