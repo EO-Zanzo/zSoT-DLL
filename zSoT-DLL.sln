@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SeaOfThots", "SeaOfThots\SeaOfThots.vcxproj", "{52548C11-6612-451C-B4E1-CE043ECF33F4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoT-SDK-compilable", "SDK\SoT-SDK-compilable.vcxproj", "{AC5E8C18-D93C-4D65-983D-990947A089EF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zSoT-SDK", "SDK\zSoT-SDK.vcxproj", "{AC5E8C18-D93C-4D65-983D-990947A089EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
