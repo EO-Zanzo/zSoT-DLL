@@ -1,0 +1,3 @@
+[submodule "SDK"]
+	path = SDK
+	url = git@github.com:zH4x/zSoT-SDK.git
