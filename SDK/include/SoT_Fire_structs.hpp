@@ -11,7 +11,7 @@
 #include "SoT_StatusEffects_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_Athena_classes.hpp"
+#include "AthenaCommons.hpp"
 
 namespace SDK
 {

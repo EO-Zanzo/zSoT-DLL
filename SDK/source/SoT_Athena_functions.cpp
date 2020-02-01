@@ -15,109 +15,109 @@ namespace SDK
 // Function Athena.MetalAIFormComponent.OnRep_IsWet
 // (Final, Native, Private)
 
-//void UMetalAIFormComponent::OnRep_IsWet()
-//{
-//	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.MetalAIFormComponent.OnRep_IsWet"));
-//
-//	struct
-//	{
-//	} params;
-//
-//
-//	UObject::ProcessEvent(fn, &params);
-//}
-//
-//
-//// Function Athena.PlantAIFormComponent.OnRep_IsWet
-//// (Final, Native, Private)
-//
-//void UPlantAIFormComponent::OnRep_IsWet()
-//{
-//	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PlantAIFormComponent.OnRep_IsWet"));
-//
-//	struct
-//	{
-//	} params;
-//
-//
-//	UObject::ProcessEvent(fn, &params);
-//}
-//
-//
-//// Function Athena.PlantAIFormComponent.OnRep_IsWeak
-//// (Final, Native, Private)
-//
-//void UPlantAIFormComponent::OnRep_IsWeak()
-//{
-//	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PlantAIFormComponent.OnRep_IsWeak"));
-//
-//	struct
-//	{
-//	} params;
-//
-//
-//	UObject::ProcessEvent(fn, &params);
-//}
-//
-//
-//// Function Athena.ShadowAIFormComponent.OnRep_FlameSpecificPhobia
-//// (Final, RequiredAPI, Native, Private, HasOutParms)
-//// Parameters:
-//// TEnumAsByte<EFlameOfFateType>  PreviousType                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-//
-//void UShadowAIFormComponent::OnRep_FlameSpecificPhobia(TEnumAsByte<EFlameOfFateType> PreviousType)
-//{
-//	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ShadowAIFormComponent.OnRep_FlameSpecificPhobia"));
-//
-//	struct
-//	{
-//		TEnumAsByte<EFlameOfFateType>  PreviousType;
-//	} params;
-//
-//	params.PreviousType = PreviousType;
-//
-//	UObject::ProcessEvent(fn, &params);
-//}
-//
-//
-//// Function Athena.ShadowAIFormComponent.OnRep_CurrentState
-//// (Final, RequiredAPI, Native, Private, HasOutParms)
-//// Parameters:
-//// TEnumAsByte<EShadowAIFormState> PreviousState                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-//
-//void UShadowAIFormComponent::OnRep_CurrentState(TEnumAsByte<EShadowAIFormState> PreviousState)
-//{
-//	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ShadowAIFormComponent.OnRep_CurrentState"));
-//
-//	struct
-//	{
-//		TEnumAsByte<EShadowAIFormState> PreviousState;
-//	} params;
-//
-//	params.PreviousState = PreviousState;
-//
-//	UObject::ProcessEvent(fn, &params);
-//}
-//
-//
-//// Function Athena.ShadowAIFormComponent.Multicast_ChangedToState
-//// (Final, Net, Native, Event, NetMulticast, Private)
-//// Parameters:
-//// TEnumAsByte<EShadowAIFormState> InState                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-//
-//void UShadowAIFormComponent::Multicast_ChangedToState(TEnumAsByte<EShadowAIFormState> InState)
-//{
-//	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ShadowAIFormComponent.Multicast_ChangedToState"));
-//
-//	struct
-//	{
-//		TEnumAsByte<EShadowAIFormState> InState;
-//	} params;
-//
-//	params.InState = InState;
-//
-//	UObject::ProcessEvent(fn, &params);
-//}
+void UMetalAIFormComponent::OnRep_IsWet()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.MetalAIFormComponent.OnRep_IsWet"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.PlantAIFormComponent.OnRep_IsWet
+// (Final, Native, Private)
+
+void UPlantAIFormComponent::OnRep_IsWet()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PlantAIFormComponent.OnRep_IsWet"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.PlantAIFormComponent.OnRep_IsWeak
+// (Final, Native, Private)
+
+void UPlantAIFormComponent::OnRep_IsWeak()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PlantAIFormComponent.OnRep_IsWeak"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.ShadowAIFormComponent.OnRep_FlameSpecificPhobia
+// (Final, RequiredAPI, Native, Private, HasOutParms)
+// Parameters:
+// TEnumAsByte<EFlameOfFateType>  PreviousType                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UShadowAIFormComponent::OnRep_FlameSpecificPhobia(TEnumAsByte<EFlameOfFateType> PreviousType)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ShadowAIFormComponent.OnRep_FlameSpecificPhobia"));
+
+	struct
+	{
+		TEnumAsByte<EFlameOfFateType>  PreviousType;
+	} params;
+
+	params.PreviousType = PreviousType;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.ShadowAIFormComponent.OnRep_CurrentState
+// (Final, RequiredAPI, Native, Private, HasOutParms)
+// Parameters:
+// TEnumAsByte<EShadowAIFormState> PreviousState                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UShadowAIFormComponent::OnRep_CurrentState(TEnumAsByte<EShadowAIFormState> PreviousState)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ShadowAIFormComponent.OnRep_CurrentState"));
+
+	struct
+	{
+		TEnumAsByte<EShadowAIFormState> PreviousState;
+	} params;
+
+	params.PreviousState = PreviousState;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.ShadowAIFormComponent.Multicast_ChangedToState
+// (Final, Net, Native, Event, NetMulticast, Private)
+// Parameters:
+// TEnumAsByte<EShadowAIFormState> InState                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UShadowAIFormComponent::Multicast_ChangedToState(TEnumAsByte<EShadowAIFormState> InState)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ShadowAIFormComponent.Multicast_ChangedToState"));
+
+	struct
+	{
+		TEnumAsByte<EShadowAIFormState> InState;
+	} params;
+
+	params.InState = InState;
+
+	UObject::ProcessEvent(fn, &params);
+}
 
 
 // Function Athena.ControllableObject.TakenControlImpl

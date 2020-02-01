@@ -1,4 +1,5 @@
 #pragma once
+#define DrawText DrawText
 
 // Sea of Thieves (2.0) SDK
 
@@ -2367,7 +2368,7 @@ public:
 	unsigned char                                      bHDR : 1;                                                 // 0x015C(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
 	unsigned char                                      bAutoGenerateMips : 1;                                    // 0x015C(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
 	unsigned char                                      UnknownData01[0x3];                                       // 0x015D(0x0003) MISSED OFFSET
-	TEnumAsByte<EPixelFormat>                          OverrideFormat;                                           // 0x0160(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      OverrideFormat[1];                                           // 0x0160(0x0001) (ZeroConstructor, IsPlainOldData)
 	bool                                               bDontClearOnCreation;                                     // 0x0161(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x6];                                       // 0x0162(0x0006) MISSED OFFSET
 
@@ -3890,9 +3891,9 @@ public:
 class ULevel : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x78];
-	TArray<class AActor*>                              AActors;
-	unsigned char                                      UnknownData10[0x18];                                      // 0x0028(0x00A0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x78];                                      // 0x0028(0x00A0) MISSED OFFSET
+	TArray<class AActor*>                              AActors;                                                  // 0xA0(0x0010)
+	unsigned char                                      UnknownData10[0x18];                                      // 0x00B0(0x0018) MISSED OFFSET
 	class ULevelActorContainer*                        ActorCluster;                                             // 0x00C8(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, DuplicateTransient, IsPlainOldData)
 	class UWorld*                                      OwningWorld;                                              // 0x00D0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class UModel*                                      Model;                                                    // 0x00D8(0x0008) (ZeroConstructor, IsPlainOldData)
@@ -20754,7 +20755,7 @@ class UTexture2DDynamic : public UTexture
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0138(0x0008) MISSED OFFSET
-	TEnumAsByte<EPixelFormat>                          Format;                                                   // 0x0140(0x0001) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      Format[1];                                                   // 0x0140(0x0001) (ZeroConstructor, Transient, IsPlainOldData)
 	unsigned char                                      UnknownData01[0xF];                                       // 0x0141(0x000F) MISSED OFFSET
 
 	static UClass* StaticClass()
@@ -20789,7 +20790,7 @@ class UTextureRenderTargetCube : public UTextureRenderTarget
 public:
 	int                                                SizeX;                                                    // 0x0140(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	struct FLinearColor                                ClearColor;                                               // 0x0144(0x0010) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EPixelFormat>                          OverrideFormat;                                           // 0x0154(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      OverrideFormat[1];                                           // 0x0154(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0155(0x0003) MISSED OFFSET
 	unsigned char                                      bHDR : 1;                                                 // 0x0158(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
 	unsigned char                                      bForceLinearGamma : 1;                                    // 0x0158(0x0001)

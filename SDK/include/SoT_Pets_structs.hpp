@@ -12,6 +12,7 @@
 #include "SoT_Athena_classes.hpp"
 #include "SoT_AthenaAI_classes.hpp"
 #include "SoT_Engine_classes.hpp"
+#include "AthenaCommons.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"

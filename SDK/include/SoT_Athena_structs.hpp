@@ -16,43 +16,37 @@
 #include "SoT_ObjectMessaging_classes.hpp"
 #include "SoT_CoherentUIGTPlugin_classes.hpp"
 #include "SoT_AthenaInput_classes.hpp"
+#include "SoT_Wind_classes.hpp"
+#include "SoT_AthenaSocketLookup_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"
 #include "SoT_RareAudio_classes.hpp"
-#include "SoT_PositionalVoice_classes.hpp"
-#include "SoT_AthenaSocketLookup_classes.hpp"
 #include "SoT_Fire_classes.hpp"
-//#include "SoT_Tales_classes.hpp"
+#include "SoT_Sessions_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
 #include "SoT_StatusEffects_classes.hpp"
 #include "SoT_DebugMenu_classes.hpp"
 #include "SoT_Animation_classes.hpp"
 #include "SoT_DeliverableFramework_classes.hpp"
-//#include "SoT_Interaction_classes.hpp"
-#include "SoT_Sessions_classes.hpp"
 #include "SoT_InputCore_classes.hpp"
 #include "SoT_GameplayDebugger_classes.hpp"
 #include "SoT_RareEngine_classes.hpp"
 #include "SoT_StudiosAutomation_classes.hpp"
 #include "SoT_GameService_classes.hpp"
-#include "SoT_Water_classes.hpp"
-#include "SoT_Wind_classes.hpp"
 #include "SoT_PirateGenerator_classes.hpp"
 #include "SoT_Retraction_classes.hpp"
-//#include "SoT_Kraken_classes.hpp"
-#include "SoT_Watercrafts_classes.hpp"
-//#include "SoT_AIShips_classes.hpp"
-#include "SoT_ShipDamage_classes.hpp"
+#include "SoT_Time_classes.hpp"
+#include "SoT_Water_classes.hpp"
 #include "SoT_Repair_classes.hpp"
+#include "SoT_ShipDamage_classes.hpp"
+#include "SoT_Tethering_classes.hpp"
 #include "SoT_EmotingFramework_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_WwiseAudio_classes.hpp"
 #include "SoT_Pets_classes.hpp"
-#include "SoT_Cooking_enums.hpp"
-#include "SoT_Tethering_classes.hpp"
-//#include "SoT_AthenaServerMigration_classes.hpp"
+#include "SoT_Watercrafts_classes.hpp"
 #include "SoT_JsonUtilities_classes.hpp"
-#include "SoT_Time_classes.hpp"
-#include "AthenaCommons.hpp"
+#include "SoT_PositionalVoice_classes.hpp"
+#include "SoT_Cooking_enums.hpp"
 
 namespace SDK
 {
@@ -139,32 +133,6 @@ struct FIntentPredictor
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) MISSED OFFSET
 	struct FIntentPredictorParams                      Params;                                                   // 0x0004(0x0014) (Edit)
 };
-
-// ScriptStruct Athena.ImpactDamageEvent
-// 0x0058
-//struct FImpactDamageEvent
-//{
-//	struct FGuid                                       AttackId;                                                 // 0x0000(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	class UClass*                                      DamagerType;                                              // 0x0010(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	class AActor*                                      DirectInstigator;                                         // 0x0018(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	class AActor*                                      RootInstigator;                                           // 0x0020(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	struct FVector                                     Location;                                                 // 0x0028(0x000C) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	struct FVector                                     SurfaceNormal;                                            // 0x0034(0x000C) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	struct FVector                                     Velocity;                                                 // 0x0040(0x000C) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	float                                              DamageAmount;                                             // 0x004C(0x0004) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	int                                                DamageSpread;                                             // 0x0050(0x0004) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	TEnumAsByte<EHealthChangedReason>                  Reason;                                                   // 0x0054(0x0001) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	bool                                               DealFriendlyFireDamage;                                   // 0x0055(0x0001) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      UnknownData00[0x2];                                       // 0x0056(0x0002) MISSED OFFSET
-//};
-
-// ScriptStruct Athena.PlayerStat
-// 0x0010
-//struct FPlayerStat
-//{
-//	struct FName                                       Name;                                                     // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      UnknownData00[0x8];                                       // 0x0008(0x0008) MISSED OFFSET
-//};
 
 // ScriptStruct Athena.AchievementCriteria
 // 0x0020
@@ -490,23 +458,6 @@ struct FAggressiveGhostShipShotSelection
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 	class UClass*                                      ProjectileClass;                                          // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
-
-// ScriptStruct Athena.ItemLoadoutCapacity
-// 0x0010
-//struct FItemLoadoutCapacity
-//{
-//	class UClass*                                      ItemCategory;                                             // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-//	int                                                Capacity;                                                 // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
-//};
-
-// ScriptStruct Athena.ItemLoadout
-// 0x0020
-//struct FItemLoadout
-//{
-//	TArray<struct FItemLoadoutCapacity>                Capacities;                                               // 0x0000(0x0010) (Edit, ZeroConstructor)
-//	TArray<class UClass*>                              Items;                                                    // 0x0010(0x0010) (Edit, ZeroConstructor)
-//};
 
 // ScriptStruct Athena.ItemSpawnParams
 // 0x0028
@@ -2128,26 +2079,6 @@ struct FTeleportLocation
 	struct FRotator                                    TeleportRotation;                                         // 0x001C(0x000C) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct Athena.KnockBackInfo
-// 0x0034
-struct FKnockBackInfo
-{
-	float                                              HorizontalVelocity;                                       // 0x0000(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              VerticalVelocity;                                         // 0x0004(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              SwimmingVelocity;                                         // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              DockedHorizontalVelocity;                                 // 0x000C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              DockedVerticalVelocity;                                   // 0x0010(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               UseDockedVelocitiesWhenDocked;                            // 0x0014(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0015(0x0003) MISSED OFFSET
-	struct FName                                       RumbleTag;                                                // 0x0018(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              StunDuration;                                             // 0x0020(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              AIKnockbackDistance;                                      // 0x0024(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              AIKnockbackSpeed;                                         // 0x0028(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              AIKnockbackAcceleration;                                  // 0x002C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EAIKnockbackStrengthType>              AIKnockbackStrengthType;                                  // 0x0030(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x0031(0x0003) MISSED OFFSET
-};
-
 // ScriptStruct Athena.ItemCategoryAIStrategyMovementPropertiesOverride
 // 0x0018
 struct FItemCategoryAIStrategyMovementPropertiesOverride
@@ -2870,14 +2801,6 @@ struct FDetailAppearenceMaterialDesc
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
 };
 
-// ScriptStruct Athena.DetailAppearenceDesc
-// 0x0020
-//struct FDetailAppearenceDesc
-//{
-//	struct FStringAssetReference                       Mesh;                                                     // 0x0000(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-//	TArray<struct FDetailAppearenceMaterialDesc>       Materials;                                                // 0x0010(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-//};
-
 // ScriptStruct Athena.TreasureMapWidget
 // 0x0018
 struct FTreasureMapWidget
@@ -2983,13 +2906,6 @@ struct FBarrelsOfPlentyDebugLocationEntry
 	struct FVector                                     WorldSpacePosition;                                       // 0x0000(0x000C) (ZeroConstructor, IsPlainOldData)
 	float                                              SinkTime;                                                 // 0x000C(0x0004) (ZeroConstructor, IsPlainOldData)
 };
-
-// ScriptStruct Athena.StartPickupObjectActionRuleParams
-// 0x0010
-//struct FStartPickupObjectActionRuleParams
-//{
-//	TArray<TEnumAsByte<EWieldableItemSize>>            WieldableItemSizesDisablePickup;                          // 0x0000(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-//};
 
 // ScriptStruct Athena.ItemProxyImpactVfxParams
 // 0x0010
@@ -3390,18 +3306,6 @@ struct FShipDynamics
 	float                                              CapsizedAngleThreshold;                                   // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0xBC];                                      // 0x0014(0x00BC) MISSED OFFSET
 };
-
-// ScriptStruct Athena.EncounterParams
-// 0x000C
-//struct FEncounterParams
-//{
-//	TEnumAsByte<EEncounterType>                        EncounterType;                                            // 0x0000(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-//	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
-//	float                                              EncounterRadius;                                          // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-//	TEnumAsByte<EEncounterDimensions>                  EncounterDimensions;                                      // 0x0008(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-//	TEnumAsByte<EEncounterMobility>                    EncounterMobility;                                        // 0x0009(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-//	unsigned char                                      UnknownData01[0x2];                                       // 0x000A(0x0002) MISSED OFFSET
-//};
 
 // ScriptStruct Athena.DamageParamWeights
 // 0x00A0
@@ -10872,12 +10776,7 @@ struct FServerTelemetryConfigurationSettings
 	unsigned char                                      UnknownData00[0x2];                                       // 0x000E(0x0002) MISSED OFFSET
 };
 
-// ScriptStruct Athena.NetworkEventStruct
-// 0x0000 (0x0010 - 0x0010)
-struct FNetworkEventStruct : public FBoxedRpc
-{
 
-};
 
 // ScriptStruct Athena.UIReturnedToPlayerEvent
 // 0x0000 (0x0010 - 0x0010)
@@ -12840,13 +12739,6 @@ struct FServerMigrationRequestEvent
 	class FString                                      DestinationAddress;                                       // 0x0010(0x0010) (ZeroConstructor)
 	struct FGuid                                       CrewId;                                                   // 0x0020(0x0010) (ZeroConstructor, IsPlainOldData)
 };
-
-// ScriptStruct Athena.TelemetryFragmentInput
-// 0x0001
-//struct FTelemetryFragmentInput
-//{
-//	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
-//};
 
 // ScriptStruct Athena.PlayerObjectUsageTelemetryFragmentInput
 // 0x0007 (0x0008 - 0x0001)
@@ -23030,80 +22922,12 @@ struct FEventDynamicMaterialMeshLoaded
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
-// ScriptStruct Athena.BaseLightData
-// 0x0080
-//struct FBaseLightData
-//{
-//	float                                              Intensity;                                                // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	struct FColor                                      LightColor;                                               // 0x0004(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      bAffectsWorld : 1;                                        // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      CastShadows : 1;                                          // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      CastStaticShadows : 1;                                    // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      CastDynamicShadows : 1;                                   // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      bAffectTranslucentLighting : 1;                           // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      bPrecomputedLightingIsValid : 1;                          // 0x0008(0x0001)
-//	unsigned char                                      RainOcclusion : 1;                                        // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET
-//	float                                              IndirectLightingIntensity;                                // 0x000C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              ScaleForTranslucency;                                     // 0x0010(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              CapForTranslucency;                                       // 0x0014(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              Temperature;                                              // 0x0018(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      bUseTemperature : 1;                                      // 0x001C(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      UnknownData01[0x3];                                       // 0x001D(0x0003) MISSED OFFSET
-//	float                                              MinRoughness;                                             // 0x0020(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              ShadowBias;                                               // 0x0024(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              ShadowSharpen;                                            // 0x0028(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              ShadowResMaxDynamicDegradation;                           // 0x002C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      CastTranslucentShadows : 1;                               // 0x0030(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      bCastShadowsFromCinematicObjectsOnly : 1;                 // 0x0030(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      bAffectDynamicIndirectLighting : 1;                       // 0x0030(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      UnknownData02[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
-//	class UMaterialInterface*                          LightFunctionMaterial;                                    // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	struct FVector                                     LightFunctionScale;                                       // 0x0040(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      UnknownData03[0x4];                                       // 0x004C(0x0004) MISSED OFFSET
-//	class UTextureLightProfile*                        IESTexture;                                               // 0x0050(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      bUseIESBrightness : 1;                                    // 0x0058(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      UnknownData04[0x3];                                       // 0x0059(0x0003) MISSED OFFSET
-//	float                                              IESBrightnessScale;                                       // 0x005C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              LightFunctionFadeDistance;                                // 0x0060(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              DisabledBrightness;                                       // 0x0064(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      bEnableLightShaftBloom : 1;                               // 0x0068(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      UnknownData05[0x3];                                       // 0x0069(0x0003) MISSED OFFSET
-//	float                                              BloomScale;                                               // 0x006C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              BloomThreshold;                                           // 0x0070(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	struct FColor                                      BloomTint;                                                // 0x0074(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	bool                                               bUseRayTracedDistanceFieldShadows;                        // 0x0078(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      UnknownData06[0x3];                                       // 0x0079(0x0003) MISSED OFFSET
-//	float                                              RayStartOffsetDepthScale;                                 // 0x007C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//};
-
 // ScriptStruct Athena.BaseLightTemplate
 // 0x0080
 struct FBaseLightTemplate
 {
 	struct FBaseLightData                              BaseLightData;                                            // 0x0000(0x0080) (Edit)
 };
-
-// ScriptStruct Athena.PointLightData
-// 0x003C
-//struct FPointLightData
-//{
-//	float                                              AttenuationRadius;                                        // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      bUseInverseSquaredFalloff : 1;                            // 0x0004(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-//	unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
-//	float                                              LightFalloffExponent;                                     // 0x0008(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              IntensityScaleForWater;                                   // 0x000C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              MinDistanceToLightAssumed;                                // 0x0010(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              SourceRadius;                                             // 0x0014(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              SourceLength;                                             // 0x0018(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	TEnumAsByte<ESimpleLightFunctionType>              SimpleFunctionType;                                       // 0x001C(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      UnknownData01[0x3];                                       // 0x001D(0x0003) MISSED OFFSET
-//	float                                              ScaleOffset;                                              // 0x0020(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              PulsePhase;                                               // 0x0024(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              FlickerFrequency;                                         // 0x0028(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	int                                                FlickerPerlinRow;                                         // 0x002C(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	struct FLightmassPointLightSettings                LightmassSettings;                                        // 0x0030(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
-//};
 
 // ScriptStruct Athena.PointLightTemplate
 // 0x0040 (0x00C0 - 0x0080)
@@ -23113,15 +22937,6 @@ struct FPointLightTemplate : public FBaseLightTemplate
 	unsigned char                                      UnknownData00[0x4];                                       // 0x00BC(0x0004) MISSED OFFSET
 };
 
-// ScriptStruct Athena.SpotLightData
-// 0x000C
-//struct FSpotLightData
-//{
-//	float                                              InnerConeAngle;                                           // 0x0000(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              OuterConeAngle;                                           // 0x0004(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//	float                                              KickBackRatio;                                            // 0x0008(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-//};
-
 // ScriptStruct Athena.SpotLightTemplate
 // 0x0010 (0x00D0 - 0x00C0)
 struct FSpotLightTemplate : public FPointLightTemplate
@@ -23129,17 +22944,6 @@ struct FSpotLightTemplate : public FPointLightTemplate
 	struct FSpotLightData                              SpotLightData;                                            // 0x00C0(0x000C) (Edit)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x00CC(0x0004) MISSED OFFSET
 };
-
-// ScriptStruct Athena.GenericLightTemplate
-// 0x00D0
-//struct FGenericLightTemplate
-//{
-//	TEnumAsByte<ELightTemplateType>                    LightType;                                                // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-//	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
-//	struct FBaseLightData                              BaseLightData;                                            // 0x0008(0x0080) (Edit)
-//	struct FPointLightData                             PointLightData;                                           // 0x0088(0x003C) (Edit)
-//	struct FSpotLightData                              SpotLightData;                                            // 0x00C4(0x000C) (Edit)
-//};
 
 // ScriptStruct Athena.BuoyancyStateChanged
 // 0x0010
@@ -25376,14 +25180,6 @@ struct FPetAnimationWeighting
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 	float                                              Weighting;                                                // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 };
-
-// ScriptStruct Athena.WeightedPetAnimationSelector
-// 0x00A0
-//struct FWeightedPetAnimationSelector
-//{
-//	TArray<struct FPetAnimationWeighting>              Weightings;                                               // 0x0000(0x0010) (Edit, ZeroConstructor)
-//	unsigned char                                      UnknownData00[0x90];                                      // 0x0010(0x0090) MISSED OFFSET
-//};
 
 // ScriptStruct Athena.EventPlayerNameOverridesLoaded
 // 0x0001

@@ -14,26 +14,6 @@ namespace SDK
 //Classes
 //---------------------------------------------------------------------------
 
-// Class AthenaAI.AthenaAIFormComponent
-// 0x0058 (0x0120 - 0x00C8)
-//class UAthenaAIFormComponent : public UActorComponent
-//{
-//public:
-//	class UAthenaAIFormDataAsset*                      FormData;                                                 // 0x00C8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
-//	class UCharacterHitReactionDamagerTypeToAnimTypeLayer* HitReactionsLayer;                                        // 0x00D0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-//	unsigned char                                      UnknownData00[0x48];                                      // 0x00D8(0x0048) MISSED OFFSET
-//
-//	static UClass* StaticClass()
-//	{
-//		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaAI.AthenaAIFormComponent"));
-//		return ptr;
-//	}
-//
-//
-//	void OnRep_FormData();
-//};
-
-
 // Class AthenaAI.AIStrategyId
 // 0x0000 (0x0028 - 0x0028)
 class UAIStrategyId : public UObject
@@ -390,8 +370,7 @@ public:
 	unsigned char                                      UnknownData02[0x4];                                       // 0x0164(0x0004) MISSED OFFSET
 	class UClass*                                      DamageCauserType;                                         // 0x0168(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FAIDataProviderFloatValue                   PlayerBiteRadius;                                         // 0x0170(0x0030) (Edit)
-	//struct FKnockBackInfo                              KnockbackParams;                                        // 0x01A0(0x0034) (Edit)
-	unsigned char	                                   KnockbackParams[0x34];                                    // 0x01A0(0x0034) (Edit)
+	struct FKnockBackInfo                              KnockbackParams;                                          // 0x01A0(0x0034) (Edit)
 	unsigned char                                      UnknownData03[0x4];                                       // 0x01D4(0x0004) MISSED OFFSET
 	struct FAIDataProviderFloatValue                   PlayerBiteDamage;                                         // 0x01D8(0x0030) (Edit)
 	unsigned char                                      UnknownData04[0x10];                                      // 0x0208(0x0010) MISSED OFFSET
@@ -5241,18 +5220,18 @@ public:
 
 // Class AthenaAI.PetDitherComponent
 // 0x0070 (0x01D8 - 0x0168)
-//class UPetDitherComponent : public UDitherComponent
-//{
-//public:
-//	unsigned char                                      UnknownData00[0x70];                                      // 0x0168(0x0070) MISSED OFFSET
-//
-//	static UClass* StaticClass()
-//	{
-//		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaAI.PetDitherComponent"));
-//		return ptr;
-//	}
-//
-//};
+class UPetDitherComponent : public UDitherComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x70];                                      // 0x0168(0x0070) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaAI.PetDitherComponent"));
+		return ptr;
+	}
+
+};
 
 
 // Class AthenaAI.PetNameplateComponent
