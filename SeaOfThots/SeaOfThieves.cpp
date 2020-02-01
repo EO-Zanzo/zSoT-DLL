@@ -145,13 +145,13 @@ void SeaOfThieves::Initialise()
 {
 	auto tmpDir = string(getenv("localappdata")) + "\\Temp\\";
 	spdlog::flush_on(spdlog::level::debug);
-	spdlog::set_default_logger(spdlog::basic_logger_mt("SeaOfThots", tmpDir + "SeaOfThots", true));
+	spdlog::set_default_logger(spdlog::basic_logger_mt("zSoT", tmpDir + "zSoT", true));
 #if _DEBUG == TRUE
 	spdlog::set_level(spdlog::level::debug);
 #endif
 
 	// Log the initialisation
-	spdlog::info("Initialising SeaOfThots");
+	spdlog::info("Initialising zSoT");
 
 	const auto currentProcess = GetCurrentProcess();
 	const auto currentModule = GetModuleHandle(nullptr);
@@ -529,7 +529,7 @@ void SeaOfThieves::Render(UGameViewportClient* thisPointer, UCanvas* canvas)
 			/*if (playerController->WasInputKeyJustReleased(FKey("End")))
 			{
 				SeaOfThieves::UnHookRender();
-				HMODULE hMod = GetModuleHandle(L"SeaOfThots.dll");
+				HMODULE hMod = GetModuleHandle(L"zSoT.dll");
 				if (hMod) FreeLibrary(hMod);
 			}*/
 		
