@@ -12,7 +12,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 	{
 	case DLL_PROCESS_ATTACH:
 		SeaOfThieves::SetModule(hModule);
-		SeaOfThieves::Initialise();
+		//SeaOfThieves::Initialise();
 		mainThread = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)&SeaOfThieves::Initialise, NULL, NULL, NULL);
 		break;
 	case DLL_THREAD_ATTACH:
@@ -21,7 +21,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 		break;
 	case DLL_PROCESS_DETACH:
 		SeaOfThieves::UnHookRender();
-		TerminateThread(mainThread, 0);
+		//TerminateThread(mainThread, 0);
 		break;
 	}
 	return TRUE;
